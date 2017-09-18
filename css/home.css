@@ -1,0 +1,32 @@
+#wrapper {
+	width: 610px;
+	padding-left: 10px;
+}
+
+#recent {
+	display: inline-block;
+	width: 400px;
+}
+#browse {
+	display: inline-block;
+	width: 206px;
+	vertical-align: top;
+}
+#list {	
+	border: solid red;
+	width: 200px;
+	height: 200px;
+	overflow: auto;
+	vertical-align: top;
+}
+#list a {
+	color: black;
+}
+.review {
+	background-color: rgb(245,245,245);
+	border-radius: 15px;
+	border: solid black 2px;
+	width: 300px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
