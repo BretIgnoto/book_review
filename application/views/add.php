@@ -10,22 +10,27 @@
 		<h2>Add a New Book Title and a Review:</h2>
 		<form id="new" action='/books/add_new' method='post'>
 			<label>Book Title:</label><input type='text' name='title' required>
-			<label>Select an Author</label><select>
-				<option disabled selected value> -- select an option -- </option>
+			<label>Select an Author</label><select name='select_author'>
+				<option selected value=''> -- select an option -- </option>
 			<?php
 				foreach ($authors as $author) {
 			?>
-					<option><?= $author['name'] ?></option>
+					<option value="<?= $author['id'] ?>"><?= $author['name'] ?></option>
 			<?php 
 				}
 			?>
 
 		</select>
-			<label>Or Add a New Author:</label><input type='text' name='author' required>
+			<label>Or Add a New Author:</label><input type='text' name='new_author'>
 			Review: <textarea name='review' rows='4' cols='50' required></textarea>
 			<label>Rating:</label><input type='number' name='rating' min='1' max='5' required> /5 Stars <br/>
 			<input type='submit' value='Add Book and Review'>
 		</form>
 	</div>
+<?php
+	if($this->session->flashdata("errors")) {
+		echo $this->session->flashdata("errors");
+	}
+?>
 </body>
 </html>
